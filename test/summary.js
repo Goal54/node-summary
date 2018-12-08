@@ -65,7 +65,8 @@ describe('summarizeFromUrl', function() {
 	})
 
 	it('should summarize content when given a url', function(done) {
-		var url = 'https://www.forbes.com/sites/viviennedecker/2017/05/14/meet-the-23-year-old-innovating-the-nail-industry-with-static-nails/#4b48c203487d'
+		this.timeout(4000);
+		var url = 'https://www.lipsum.com/'
 		let summaryText = fs.readFileSync('./test/content-from-url.txt', 'utf8')
 		summary.summarizeFromUrl(url, function(err, result) {
 			result.should.be == summaryText
